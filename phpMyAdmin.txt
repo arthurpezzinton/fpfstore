@@ -1,0 +1,69 @@
+CREATE DATABASE fpf_store;
+----------------------------
+CREATE TABLE produtos (
+	produtos_codigo int NOT NULL AUTO_INCREMENT,
+	produtos_nome varchar(100),
+	produtos_categoria varchar(10),
+	produtos_marca varchar(100),
+	produtos_tamanho varchar(10),
+	produtos_descricao varchar(255),
+	produtos_valor int(6),
+	produtos_desconto int(3),
+	produtos_qtd int(6),
+	produtos_ativo varchar(1),
+	PRIMARY KEY (produtos_codigo)
+);
+
+CREATE TABLE categorias (
+	categorias_codigo int NOT NULL AUTO_INCREMENT,
+	categorias_nome varchar(100),
+	categorias_ativo varchar(1),
+	PRIMARY KEY (categorias_codigo)
+);
+
+CREATE TABLE fotos_produtos (
+	fotos_codigo int NOT NULL AUTO_INCREMENT,
+	fotos_produtos_codigo int(20),
+	fotos_nome varchar(255),
+	PRIMARY KEY (fotos_codigo)
+);
+
+
+CREATE TABLE pessoas (
+	pessoas_codigo int NOT NULL AUTO_INCREMENT,
+	pessoas_nome varchar(100),
+	pessoas_sobrenome varchar(100),
+	pessoas_email varchar(255),
+	pessoas_password varchar(255),
+	pessoas_endereco varchar(255),
+	pessoas_cidade varchar(255),
+	pessoas_estado varchar(255),
+	pessoas_cep varchar(255),
+	PRIMARY KEY (pessoas_codigo)
+);
+
+CREATE TABLE vendas (
+	vendas_codigo int NOT NULL AUTO_INCREMENT,
+	vendas_pessoas_codigo int(20),
+	vendas_produto_codigo int(20),
+	vendas_valor int(6),
+	vendas_qtd int(6),
+	vendas_data date,	
+	vendas_email varchar(255),
+	vendas_nome varchar(200),
+	vendas_endereco varchar(255),
+	vendas_cidade varchar(255),
+	vendas_estado varchar(255),
+	vendas_cep varchar(255),
+	vendas_rastreio varchar(255),
+	PRIMARY KEY (vendas_codigo)
+);
+
+CREATE TABLE carrinho (
+	carrinho_codigo int NOT NULL AUTO_INCREMENT,
+	carrinho_pessoas_codigo int(20),
+	carrinho_produtos_codigo int(20),
+	PRIMARY KEY (carrinho_codigo)
+);
+
+INSERT INTO pessoas VALUES(0,'Administrador','FPF Tech','admin@fpf.com','698c8044abcc4bcfadb59e4a4561ddd8d671b765',NULL,NULL,NULL,NULL);
