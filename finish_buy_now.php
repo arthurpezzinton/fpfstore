@@ -45,7 +45,7 @@
 
 			$updater = $blog->updateProductAmount($_POST["codigo"],$left);
 
-			/*$textValue = number_format(($value/100),2,",",".");
+			$textValue = number_format(($value/100),2,",",".");
 			$textTotal = number_format(($_POST["quantidade"]*($value/100)),2,",",".");
 
 			$headers = "From: FPF Store". "\r\n";
@@ -68,7 +68,7 @@
 		    $to_email = $_POST['email'];
 		    $subject = "Compra Realizada";
 
-			mail($to_email, $subject, $mensagem, $headers);*/
+			mail($to_email, $subject, $mensagem, $headers);
 
 			echo json_encode($updater);
 		}else{

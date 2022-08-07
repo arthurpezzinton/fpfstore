@@ -31,11 +31,44 @@
 							</div>
 						</div>
 					</div>
+					<br>
+					<div class="row">
+						<div class="col-sm-12 p-3" align="center">
+							<div class="loader" id="loaderConfig" style="display: none;"></div>
+						</div>
+					</div>
 
 
 					<script type="text/javascript">
+
+						function loginAfterRegister(){
+							$.ajax({
+								type: "POST",
+								url: "login.php",
+								dataType: 'json',
+								data: {
+									email: $("#registerEmail").val(),
+									senha: $("#registerPassword").val(),
+								},
+											
+								success: function(result){
+									window.location.href = "index.php";
+								},
+
+								error: function(message) {
+									swal({
+									  title: "Erro",
+									  text: "Desculpe, houve um erro na leitura dos dados.",
+									  icon: "warning",
+									  buttons: true,
+									  dangerMode: true,
+									});
+								}
+							});
+						}
 						
 						function saveRegister(){
+							$("#loaderConfig").css("display", "");
 							$.ajax({
 								type: "POST",
 								url: "save_register.php",
@@ -95,11 +128,11 @@
 										  icon: "success",
 										  buttons: true,
 										  dangerMode: false,
-										}).then((willDelete) => {
-										  if (willDelete) {
-												window.location.href = "index.php";
+										}).then((willLog) => {
+										  if (willLog) {
+												loginAfterRegister();
 										  } else {
-												window.location.href = "index.php";
+												loginAfterRegister();
 										  }
 										});
 									}

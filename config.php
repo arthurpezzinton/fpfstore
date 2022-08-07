@@ -315,8 +315,8 @@
 			  icon: "warning",
 			  buttons: true,
 			  dangerMode: true,
-			}).then((willLock) => {
-			  if (willLock) {
+			}).then((willunLock) => {
+			  if (willunLock) {
 			  		$("#loaderConfig").css("display", "");
 			  		$.ajax({
 						type: "POST",
@@ -351,8 +351,8 @@
 			  icon: "warning",
 			  buttons: true,
 			  dangerMode: true,
-			}).then((willLock) => {
-			  if (willLock) {
+			}).then((willDelete) => {
+			  if (willDelete) {
 			  		$("#loaderConfig").css("display", "");
 			  		$.ajax({
 						type: "POST",
@@ -423,8 +423,8 @@
 			  icon: "warning",
 			  buttons: true,
 			  dangerMode: true,
-			}).then((willLock) => {
-			  if (willLock) {
+			}).then((willUnlock) => {
+			  if (willUnlock) {
 			  		$("#loaderConfig").css("display", "");
 			  		$.ajax({
 						type: "POST",
@@ -459,8 +459,8 @@
 			  icon: "warning",
 			  buttons: true,
 			  dangerMode: true,
-			}).then((willLock) => {
-			  if (willLock) {
+			}).then((willDelete) => {
+			  if (willDelete) {
 			  		$("#loaderConfig").css("display", "");
 			  		$.ajax({
 						type: "POST",
